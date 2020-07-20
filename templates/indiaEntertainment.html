@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block contant %}
+
+
+<head>
+    {% load static %}
+    <title>Entertainment News India | Indian Entertainment</title>
+    <meta name = "keywords" content = "Entertainment khabar, top Entertainment samachar in india,india Entertainment news,india ki Entertainment update">
+
+     <!-- Provide description of the page -->
+     <meta name = "description" content = "Latest Entertainment news in india today.top updates of indian bollywood.indian movies tv show top updates. top blockbuster show in india Dailynews.">
+
+     <!-- Author information -->
+     <meta name = "author" content = "Navneet">
+
+     <!-- Page content type -->
+     <meta http-equiv = "content-type" content = "text/html; charset = UTF-8">
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+    <div class="news blue">
+    {% if user.is_authenticated %}
+    <span>Hello {{user.username}}</span>
+    {% else %}
+    <span>Latest News</span>
+    {% endif %}
+    <span class="text1" ><span><h5><a href="{% url 'indiasport' %}">India Sports</a></h5></span><span><h5><a href="{% url 'indiaBussiness' %}">India Bussiness</a></h5></span><span><h5><a href="{% url 'indiaEntertainment' %}">India Entertainment</a></h5></span><span><h5><a href="{% url 'indiatechnology' %}">India Technology</a></h5></span><span><h5><a href="{% url 'indiascience' %}">India Science</a></h5></span><marquee><h3>Indian Entertainment News Section</h3></marquee></span>
+    </div>
+<br/>
+<div class="container">
+  <div class="row">
+<h1>India Entertainment News</h1>
+        <div class="card mb-3">
+          {% for x in indiaEntertainment.articles %}
+          <img src="{{ x.urlToImage }}" class="card-img-top" alt="{{ x.source }}" height="350px" width="700px">
+          <div class="card-body">
+            <h3 class="card-title">{{ x.title }}</h3><hr>
+            <h4 class="card-title">{{ x.description }}</h4>
+            <p class="card-text">{{ x.content }}</p>
+            <h5 class="card-text"><small class="text-muted">{{x.publishedAt}}</small></h5>
+            <a href={{ x.url }} class="btn btn-primary">Read more..</a>
+            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="100" data-href={{x.url}} data-layout="button" data-action="like" data-size="large"></div>
+            <div class="fb-share-button" data-href={{ x.url }} data-layout="button_count" data-size="large"></div>
+            <a href="whatsapp://send?text={{x.title}}
+                {{x.content}}-- Read More Click this link - https://dailynews.pythonanywhere.com/" class="btn btn-success" data-width="100" data-size="large" data-href={{x.url}} target = _blank><i class="fa fa-whatsapp" style="color:white"></i></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+
+        {% endblock %}

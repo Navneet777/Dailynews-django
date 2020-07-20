@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block contant %}
+<head>
+  {% load static %}
+    <title> India News | Latest Indian News</title>
+  <!-- Provide list of keywords -->
+     <meta name = "keywords" content = "india entertainment news,sport news india,science news india,indian technologies,bussiness news india">
+
+     <!-- Provide description of the page -->
+     <meta name = "description" content = "India news latest top update of today cryptonews provide india news for diffrent sections read indian news in dailynews.">
+
+     <!-- Author information -->
+     <meta name = "author" content = "Navneet">
+
+     <!-- Page content type -->
+     <meta http-equiv = "content-type" content = "text/html; charset = UTF-8">
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'css/india.css' %}">
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<br>
+<br>
+<br>
+<br>
+<div class="myindia">
+<div class="container-fluid text-center bg-grey">
+  <h1 class="country" href="{% url 'india' %}">INDIA NEWS</h1><br>
+    <div class="news blue">
+    {% if user.is_authenticated %}
+    <span>Hello {{user.username}}</span>
+    {% else %}
+    <span>Latest News</span>
+    {% endif %}
+    <span class="text1" ><span><h5><a href="{% url 'indiasport' %}">India Sports</a></h5></span><span><h5><a href="{% url 'indiaBussiness' %}">India Bussiness</a></h5></span><span><h5><a href="{% url 'indiaEntertainment' %}">India Entertainment</a></h5></span><span><h5><a href="{% url 'indiatechnology' %}">India Technology</a></h5></span><span><h5><a href="{% url 'indiascience' %}">India Science</a></h5></span><marquee><h3>Indian News Section</h3></marquee></span>
+    </div>
+
+    <p>Check out the latest news from India ,Latest India news on Sports, Politics, Technology, Science, Entertainment provide in CryptoNews.</p>
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{% static 'img/sportlabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+        <h3><strong><a href="{% url 'indiasport' %}">Sport News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'indiasport' %}">click here</a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{% static 'img/techlabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+        <h3><strong><a class="nav-link active" href="{% url 'indiatechnology' %}">Technology News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'indiatechnology' %}">click here</a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static 'img/bussinesslabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+      <div class="thumbnail">
+        <h3><strong><a class="nav-link active" href="{% url 'indiaBussiness' %}">Bussiness News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'indiaBussiness' %}">click here</a>
+      </div>
+    </div>
+</div>
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <img src="{% static 'img/sciencelabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+      <div class="thumbnail">
+        <h3><strong><a class="nav-link active" href="{% url 'indiascience' %}">Science News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'indiascience' %}">click here</a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static 'img/entertainmentlabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+      <div class="thumbnail">
+        <h3><strong><a class="nav-link active" href="{% url 'indiaEntertainment' %}">Entertainment News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'indiaEntertainment' %}">click here</a>
+      </div>
+    </div>
+</div>
+</div>
+{% endblock %}

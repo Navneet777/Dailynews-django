@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block contant %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/account/signup.css'%}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"><br><br>
+<div class="container">
+  <br>
+  {% if messages %}
+  	      {% for i in messages %}
+      <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';" alertTimeout(15);>&times;</span>
+      <strong>{{i}}</strong>
+      </div>
+  	    {% endfor %}
+  	   {% endif %}
+
+  <form class="border border-light p-5" method="POST" action="{% url 'loginuser' %}">
+    {% csrf_token%}
+
+    <p class="h4 mb-4 text-center">Sign in</p>
+
+    <input type="text" name="name" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Username">
+
+    <input type="password" name="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+    <!-- Forgot password -->
+    <a href="{% url 'forgetpass' %}">click here to reset password</a>
+    <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+</form>
+
+</div>
+<div>
+
+</div>
+
+{% endblock %}

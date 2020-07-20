@@ -1,0 +1,28 @@
+.alert {
+    position:center;
+  padding: 20px;
+  background-color: #EF2169 ; /* Pink */
+  color: white;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-left: 30%;
+  margin-right:30%
+  width: auto;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}

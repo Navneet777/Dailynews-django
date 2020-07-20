@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block contant %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/account/signup.css'%}">
+<link rel="stylesheet" href="{% static 'css/account/alert.css'%}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<div class="container"><br><br>
+  {% if messages %}
+  	      {% for i in messages %}
+      <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';" alertTimeout(15);>&times;</span>
+      <strong>{{i}}</strong>
+      </div>
+  	    {% endfor %}
+  	   {% endif %}
+
+  <form class="border border-light p-5" method="POST" action="{% url 'forgetpass' %}">
+    {% csrf_token %}
+
+    <p class="h4 mb-4 text-center">Password Recover</p>
+
+    <input type="text" name="name" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Please Enter Your Valid Username">
+
+    <input type="email" name="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Please Enter Your Valid Email Address">
+
+    <input type="password" name="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder=" Select New Password">
+
+    <input type="password" name="password1" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Confirm New Password">
+    <a href="{% url 'loginuser' %}">Already heve a account sign in here</a>
+    <button class="btn btn-info btn-block my-4" type="submit">Change Password</button>
+</form>
+</div>
+
+{% endblock %}

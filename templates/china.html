@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block contant %}
+<head>
+    <title>China News Top Headlines | DailyNews</title>
+    {% load static %}
+  <!-- Provide list of keywords -->
+     <meta name = "keywords" content = "china news in english,china headlines , top china news ,china technologies update,bussiness news china">
+
+     <!-- Provide description of the page -->
+     <meta name = "description" content = "Get the latest China news, breaking China news, China business news, as well as information on China politics, China culture, and China military and Sports News in CryptoNews.We Provide china Sports news,Bussiness news,Science news,Technology News,china Entertainment News.">
+
+     <!-- Author information -->
+     <meta name = "author" content = "Navneet">
+
+     <!-- Page content type -->
+     <meta http-equiv = "content-type" content = "text/html; charset = UTF-8">
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="{% static 'css/india.css' %}">
+   <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<br>
+<br>
+<br>
+<div class="myindia">
+<div class="container-fluid text-center bg-grey">
+  <h1 class="country" href="{% url 'china' %}">CHINA NEWS</h1><br>
+    <div class="news blue">
+    {% if user.is_authenticated %}
+    <span>Hello {{user.username}}</span>
+    {% else %}
+    <span>Latest News</span>
+    {% endif %}
+    <span class="text1" ><span><h5><a href="{% url 'chinasport' %}">China Sports</a></h5></span><span><h5><a href="{% url 'chinaBussiness' %}">China Bussiness</a></h5></span><span><h5><a href="{% url 'chinaEntertainment' %}">China Entertainment</a></h5></span><span><h5><a href="{% url 'chinatechnology' %}">China Technology</a></h5></span><span><h5><a href="{% url 'chinascience' %}">China Science</a></h5></span><marquee><h3>China News Section</h3></marquee></span>
+    </div>
+
+    <p>Get the latest China news, breaking China news, China business news, as well as information on China politics, China culture, and China military and Sports News in CryptoNews.</p>
+
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{% static 'img/sportlabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+        <h3><strong><a class="nav-link active" href="{% url 'chinasport' %}">Sport News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'chinasport' %}">click here</a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{% static 'img/techlabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+        <h3><strong><a class="nav-link active" href="{% url 'chinatechnology' %}">Technology News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'chinatechnology' %}">click here</a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static 'img/bussinesslabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+      <div class="thumbnail">
+        <h3><strong><a class="nav-link active" href="{% url 'chinaBussiness' %}">Bussiness News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'chinaBussiness' %}">click here</a>
+      </div>
+    </div>
+</div>
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <img src="{% static 'img/sciencelabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+      <div class="thumbnail">
+        <h3><strong><a class="nav-link active" href="{% url 'chinascience' %}">Science News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'chinascience' %}">click here</a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static 'img/entertainmentlabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+      <div class="thumbnail">
+        <h3><strong><a class="nav-link active" href="{% url 'chinaEntertainment' %}">Entertainment News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'chinaEntertainment' %}">click here</a>
+      </div>
+    </div>
+</div>
+</div>
+{% endblock %}

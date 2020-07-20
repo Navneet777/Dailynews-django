@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block contant %}
+<head>
+{% load static %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+<title>Top Crypto Currency News | Dailynews</title>
+<meta name="description" content="Dailynews provide live rates of Cryptocurrency Bitcoin live rate, doller live rate, and more live rates of cryptocurrency.">
+<meta name="keywords" content="Dailynews bitcoin live rates, Doller Prices in india ,current status of cryptocurrency , Top cryptocurrency in world ">
+<meta name="author" content="Navneet">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158205883-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-158205883-3');
+</script>
+
+</head>
+
+<br>
+<br>
+<br>
+<marquee width="100%" behavior="alternate" bgcolor="#ebc034">
+<p><b>Latest Crypto Currency News| Daily News</b></p>
+</marquee>
+
+<div class="container">
+  <div class="row">
+
+        <div class="card mb-3">
+          {% for x in api.Data %}
+          <img src="{{ x.imageurl }}" class="card-img-top" alt="{{ x.source }}" height="350px" width="700px">
+          <div class="card-body">
+            <h3 class="card-title">{{ x.title }}</h3>
+            <p class="card-text">{{ x.body }}</p>
+            <a href={{ x.url }} class="btn btn-info">Read more..</a>
+            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="100" data-href={{x.url}} data-layout="button" data-action="like" data-size="large"></div>
+            <div class="fb-share-button" data-href={{ x.url }} data-layout="button_count" data-size="large"></div>
+            <a href="whatsapp://send?text={{x.title}}
+                {{x.content}}-- Read More Click this link - https://dailynews.pythonanywhere.com/" class="btn btn-success" data-width="100" data-size="large" data-href={{x.url}} target = _blank><i class="fa fa-whatsapp" style="color:white"></i></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+
+    {% endblock %}

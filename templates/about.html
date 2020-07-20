@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block contant %}
+<head>
+  <title>About Us DailyNews and Sources</title>
+  <meta name = "keywords" content = "Navneet DailyNews,Dailynews About,Dailynews ,DailyNews About and Source">
+
+  <!-- Provide description of the page -->
+  <meta name = "description" content = "Dailynews Provides Latest News Headlines and Our website covers Latest India News China News, USA news ,Russia News,Top Todays Breaking News on Business, India, World, Politics, Entertainment and Sports News.CryptoNews provides live rates of Cryptocurrency.">
+
+  <!-- Author information -->
+  <meta name = "author" content = "Navneet">
+
+  <!-- Page content type -->
+  <meta http-equiv = "content-type" content = "text/html; charset = UTF-8">
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+<div class="aboutus-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="aboutus">
+                        <h2 class="aboutus-title">About Us</h2>
+                        <p class="aboutus-text"><b>Dailynews</b> is the perfect place to learn about crypto currencies and start to understand some of the fundamental concepts behind the blockchain and crypto currency news.</p>
+                        <p class="aboutus-text"><b>Dailynews</b> offers original coverage of the global blockchain and cryptocurrency news, provides opinions, reviews, guides, introduces to Crypto people with an aim to help the general public understand and successfully use these technologies now and in the future.</p>
+                      </div>
+                    </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="aboutus-banner">
+                      <img src="{% static 'img/navneet.jpg' %}" class="rounded-circle img-fluid"
+                        alt="navi image">
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-6 col-xs-12">
+                    <div class="feature">
+                        <div class="feature-box">
+                            <div class="clearfix">
+                                <div class="iconset">
+                                    <span class="glyphicon glyphicon-cog icon"></span>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>About Me</h4>
+                                    <p><b>Navneet Chourasia</b></p>
+                                    <p>Website Developer</p>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="clearfix">
+                                <div class="iconset">
+                                    <span class="glyphicon glyphicon-cog icon"></span>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Our services</h4>
+                                    <p>Dailynews provides Latest News Headlines and Our website covers Latest India News China News, USA news ,Russia News,Top Todays Breaking News on Business, India, World, Politics, Entertainment and Sports News.CryptoNews provides live rates of Cryptocurrency.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="clearfix">
+                                <div class="iconset">
+                                    <span class="glyphicon glyphicon-cog icon"></span>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Contact Us</h4>
+                                    <a href="https://www.linkedin.com/in/navneet-chourasia-a03a8a179/" class="fa fa-linkedin"></a>
+                                    <a href="https://www.instagram.com/im__navneet/" class="fa fa-instagram"></a>
+                                    <a href="https://m.facebook.com/navneet.chourasia.52" class="fa fa-facebook"></a>
+                                    <p><b>Email - navneetchourasiabgt@gmail.com</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

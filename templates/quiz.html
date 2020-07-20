@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block contant %}
+<br><br><br><br>
+<p></p>
+<div class="container">
+  <div class="row">
+    <p>{{quiz}}</p>
+<div class="card mb-3">
+    {% for x in quiz.results %}
+  <div class="card-body">
+    <p class="card-title">{{ x.category }}</p><br>
+    <h4 class="card-text">{{ x.question }}</h4><br>
+    <h6 class="card-text">{{ x.incorrect_answers}}</h6><br>
+    <h6 class="card-text">{{ x.correct_answer }}</h6><br>
+
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

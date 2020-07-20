@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block contant %}
+<head>
+{% load static %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+<title>Live Cryptocurrency Rates  | Lookup Price</title>
+<meta name="description" content="Dailynews provide live rates of Cryptocurrency Bitcoin live rate, doller live rate, and more live rates of cryptocurrency.">
+<meta name="keywords" content="Dailynews bitcoin live rates, Doller Prices in india ,current status of cryptocurrency , Top cryptocurrency in world ">
+<meta name="author" content="Navneet">
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158205883-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-158205883-3');
+</script>
+
+</head>
+
+<div class="jumbotron">
+<h1 class="display-4"><b>Welcome to Dailynews</b></h1>
+<h4 class="lead">Your Source For Up To The Minute Crypto Currency and Blockchain News!</h4>
+<hr class="my-4">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+  Read More..
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Crypto News Live Rates</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Dailynews is the perfect place to learn about crypto currencies and start to understand some of the fundamental concepts behind the blockchain and crypto currency news.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<marquee width="100%" behavior="scroll" bgcolor="yellow">
+ <b>Bitcoin=(BTC), Ethereum = (ETH),Ripple = (XRP),Bitcoin Cash = (BCH),EOS = (EOS),Litecoin =(LTC),Cardano = (ADA),Stellar Lumens =(XLM),Tether =(UDST), TRON =(TRX), IOTA = (MIOTA)</b>
+
+</marquee>
+<br>
+<table class="table table-striped table-dark table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">NAME</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">24Hrs HIGH</th>
+      <th scope="col">24Hrs LOW</th>
+      <th scope="col">MarketCap</th>
+    </tr>
+  </thead>
+
+<tbody>
+  {% for key,value in price.DISPLAY.items %}
+    <tr>
+      <td>{{ key}}</td>
+      <td>{{value.USD.PRICE}}</td>
+      <td>{{value.USD.HIGHDAY}}</td>
+      <td>{{value.USD.LOWDAY}}</td>
+      <td>{{value.USD.MKTCAP}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<br/><br/>
+<nav class="navbar navbar-dark bg-light">
+
+</nav>
+<br/>
+  <div class="container">
+  <div class="row">
+    {% for x in api.Data %}
+      <div class="col-sm">
+      <div class="card" style="width: 18rem;">
+      <img src="{{ x.imageurl }}" class="card-img-top" alt="{{ x.source }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ x.title}}</h5>
+          <p class="card-text">{{ x.body }}</p>
+          <a href={{ x.url }} class="btn btn-info">Read more..</a>
+        </div>
+      </div>
+      <br/>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

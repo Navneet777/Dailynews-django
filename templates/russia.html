@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block contant %}
+<head>
+    <title>Latest Headlines Of Russian Today | CryptoNewsNetwork</title>
+  <!-- Provide list of keywords -->
+     <meta name = "keywords" content = "Latest Headlines Of Russian Today, russia sport news, science news russia,russia technologies,bussiness news russia">
+
+     <!-- Provide description of the page -->
+     <meta name = "description" content = "CryptoNews Provide russia Sports news,Bussiness news,Science news,Technology News,russia Entertainment News.">
+
+     <!-- Author information -->
+     <meta name = "author" content = "Navneet">
+
+     <!-- Page content type -->
+     <meta http-equiv = "content-type" content = "text/html; charset = UTF-8">
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'css/india.css' %}">
+   <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<br>
+<br>
+<br>
+<br>
+<div class="myindia">
+<div class="container-fluid text-center bg-grey">
+  <h2 class="country" href="{% url 'russia' %}">RUSSIA NEWS</h2><br>
+    <div class="news blue">
+    {% if user.is_authenticated %}
+    <span>Hello {{user.username}}</span>
+    {% else %}
+    <span>Latest News</span>
+    {% endif %}
+    <span class="text1" ><span><h5><a href="{% url 'russiasport' %}">Russia Sports</a></h5></span><span><h5><a href="{% url 'russiaBussiness' %}">Russia Bussiness</a></h5></span><span><h5><a href="{% url 'russiaEntertainment' %}">Russia Entertainment</a></h5></span><span><h5><a href="{% url 'russiatechnology' %}">Russia Technology</a></h5></span><span><h5><a href="{% url 'russiascience' %}">Russia Science</a></h5></span><marquee><h1>Russia News Section</h1></marquee></span>
+    </div>
+
+    <p>Russia News Get the latest breaking news and top news headlines at CryptoNews provide Independent news from Russia</p>
+
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{% static 'img/sportlabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+        <h3><strong><a class="nav-link active" href="{% url 'russiasport' %}">Sport News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'russiasport' %}">click here</a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{% static 'img/techlabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+        <h3><strong><a class="nav-link active" href="{% url 'russiatechnology' %}">Technology News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'russiatechnology' %}">click here</a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static 'img/bussinesslabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+      <div class="thumbnail">
+        <h3><strong><a class="nav-link active" href="{% url 'russiaBussiness' %}">Bussiness News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'russiaBussiness' %}">click here</a>
+      </div>
+    </div>
+</div>
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <img src="{% static 'img/sciencelabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+      <div class="thumbnail">
+        <h3><strong><a class="nav-link active" href="{% url 'russiascience' %}">Science News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'russiascience' %}">click here</a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static 'img/entertainmentlabel.jpg' %}" class="img-circle" alt="My image" height="180px" width="180px">
+      <div class="thumbnail">
+        <h3><strong><a class="nav-link active" href="{% url 'russiaEntertainment' %}">Entertainment News</a></strong></h3>
+        <a class="nav-link active" href="{% url 'russiaEntertainment' %}">click here</a>
+      </div>
+    </div>
+</div>
+</div>
+{% endblock %}

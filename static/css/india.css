@@ -1,0 +1,35 @@
+.country {
+          background-color: #272b33;
+          color: white;
+          padding: 12px;
+      }
+
+  p{
+    color: black;
+    font-weight: 600;
+    font-style: oblique;
+    font-weight: bolder;
+  }
+
+  p:hover{
+    color: black;
+    font-weight: 600;
+    font-style: oblique;
+    font-weight: bolder;
+  }
+.myindia {
+    background-color: #272b33;
+}
+
+a {
+    color: #225e4b;
+    text-decoration: none;
+
+}
+
+a:hover
+{
+    font-weight: bolder;
+     text-decoration:none;
+     cursor:pointer;
+}

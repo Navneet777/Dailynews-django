@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block contant %}
+<head>
+{% load static %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+<title>Top IT Companies News Articals|Dailynews</title>
+<meta name="description" content="Informations technology news in Dailynews Apple , Google Articals top big IT compney news and and Update.">
+<meta name="keywords" content="Top IT news Dailynews, IT companies articals , IT companies news ,Apple news update ">
+<meta name="author" content="Navneet">
+</head>
+
+<br/>
+  <div class="container">
+    <marquee width="100%" direction="left">
+ <h1><b>USA TOP HEADLINES</b></h1>
+</marquee>
+<div class="container">
+  <div class="row">
+
+        <div class="card mb-3">
+          {% for x in que.articles %}
+          <img src="{{ x.urlToImage }}" class="card-img-top" alt="{{ x.source }}" height="350px" width="700px">
+          <div class="card-body">
+            <h3 class="card-title">{{ x.title }}</h3>
+            <p class="card-text">{{ x.content }}</p>
+            <h5 class="card-text"><small class="text-muted">{{x.publishedAt}}</small></h5>
+            <a href={{ x.url }} class="btn btn-primary">Read more..</a>
+            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="100" data-href={{x.url}} data-layout="button" data-action="like" data-size="large"></div>
+            <div class="fb-share-button" data-href={{ x.url }} data-layout="button_count" data-size="large"></div>
+            <a href="whatsapp://send?text={{x.title}}
+                {{x.content}}-- Read More Click this link - https://dailynews.pythonanywhere.com/" class="btn btn-success" data-width="100" data-size="large" data-href={{x.url}} target = _blank><i class="fa fa-whatsapp" style="color:white"></i></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+
+        {% endblock %}
